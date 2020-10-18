@@ -1,0 +1,191 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  -webkit-tap-highlight-color: transparent;
+  font-size: 1rem;
+  font-family: monospace;
+  user-select: inherit;
+  color: #444;
+}
+
+:focus {
+  outline: 0;
+}
+
+body {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.calculator {
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+  max-width: 24rem;
+  width: 100%;
+  max-height: 36rem;
+  height: 100%;
+}
+
+.monitor {
+  display: flex;
+  flex-direction: column;
+  max-width: 24rem;
+  outline: thin solid #ddd;
+}
+
+.history-wrapper {
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  height: 3rem;
+  margin: 0.5rem;
+  /* border: 1px solid #000; */
+  -webkit-mask-image: linear-gradient(
+    -90deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 15%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  mask-image: linear-gradient(
+    270deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 15%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
+.history-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.history {
+  white-space: nowrap;
+  padding: 0.5rem;
+  color: #888;
+
+  /* background: #eee; */
+}
+
+.input {
+  display: flex;
+  height: 100%;
+  padding: 0.5rem;
+}
+
+.input textarea {
+  background: transparent;
+  font-size: 2rem;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  resize: none;
+  overflow: hidden;
+  cursor: default;
+  /* border: 1px solid #000; */
+}
+
+.buttons {
+  display: grid;
+  grid-template-areas:
+    "divide multiply subtract backspace"
+    "seven eight nine plus"
+    "four five six plus"
+    "one two three equal"
+    "zero zero point equal";
+  user-select: none;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  background: transparent;
+  transition: 150ms ease;
+  cursor: pointer;
+  outline: thin solid #ddd;
+}
+
+.button:hover {
+  transition: 150ms ease;
+  background: #eee;
+}
+
+.button:active {
+  transition: 150ms ease;
+  background: #ddd;
+}
+
+.divide {
+  grid-area: divide;
+}
+
+.multiply {
+  grid-area: multiply;
+}
+
+.subtract {
+  grid-area: subtract;
+}
+
+.backspace {
+  grid-area: backspace;
+}
+
+.seven {
+  grid-area: seven;
+}
+
+.eight {
+  grid-area: eight;
+}
+
+.nine {
+  grid-area: nine;
+}
+
+.plus {
+  grid-area: plus;
+}
+
+.four {
+  grid-area: four;
+}
+
+.five {
+  grid-area: five;
+}
+
+.six {
+  grid-area: six;
+}
+
+.one {
+  grid-area: one;
+}
+
+.two {
+  grid-area: two;
+}
+
+.three {
+  grid-area: three;
+}
+
+.equal {
+  grid-area: equal;
+}
+
+.zero {
+  grid-area: zero;
+}
+
+.point {
+  grid-area: point;
+}
